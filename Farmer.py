@@ -40,8 +40,9 @@ if st.button("🌾 Predict Irrigation Need"):
         prediction = model.predict(input_data)
         # --- Display result ---
         if prediction[0]==1:
-            st.success("💧 It's time for irrigation, insufficient water level")
-        else:
             st.success("Sufficient water level")
+        else:
+            st.success("💧 It's time for irrigation, insufficient water level")
     except AttributeError as e:
+
         st.error(f"Error: {e}. Please ensure 'Irrigation.pkl' contains a trained model, not a NumPy array.")
